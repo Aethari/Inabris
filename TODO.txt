@@ -1,0 +1,9 @@
+entities/Trigger/Trigger.gd
+================================================================
+	- make the trigger only trigger when the player first moves
+	  into it
+
+art
+================================================================
+	- make grass/dirt textures more detailed than just solid 
+	  colors?

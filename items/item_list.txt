@@ -1,0 +1,87 @@
+Crafting Notes
+
+Types of crafting:
+- General: just generic, unspecialized crafting
+- Smelting: Used for turning ore to metal, or other such
+  processes that require intense heat
+- Reclaiming: Turning metal items back into metal bars
+- Smithing: Turning metal bars into usable gear
+- Enchantments: Applying enchantments to items
+- Cooking: Turning uncooked items into cooked items
+
+================================================================
+List of all items in the game
+
+Resources (for crafting and nothing else):
+- Wood
+- Stone
+- Ore
+- String/thread
+- Flint
+- Clay
+
+Crafted Resources (resources that can only be found by crafting):
+- Metal bar
+- Cloth
+
+Workstations:
+- Workbench (general)
+- Furnace (smelting, reclaiming)
+- Anvil (smithing)
+- Enchanting Workbench (enchantments)
+- Stove (cooking)
+- Oven (cooking)
+
+Consumables (craftable):
+- Campfire kit
+
+Flasks:
+- Wooden Flask
+- Clay Flask
+- Metal Flask
+
+Building:
+- <any of the crafting stations>
+- Door
+- Wooden wall
+- Brick wall
+- Bed
+
+Armor/worn:
+- Shirt
+- Pants
+- Shoes
+- Chain shirt
+- Chain leggings
+- Chain boots
+- Plate shirt
+- Plate leggings
+- Plate boots
+
+Weapons/held tools:
+- Stick
+- Rock
+- Sharp rock
+- Sharpened stick
+- Crude spear
+- Dagger (metal)
+- Metal Spear
+- Metal Axe
+- Metal Sword
+
+Enchantment Books:
+- Debug Book
+- Minor damage buff (weapons)
+- Major damage buff (weapons)
+- Flame weapon
+- Minor defense buff (armor)
+- Major defense buff (armor)
+
+Food (uncooked):
+- Apple
+- Small steak
+- Large steak
+
+Food (cooked):
+- Baked Apple (oven)
+- Cooked steak (stove)

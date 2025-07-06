@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkfhrouwcs4hg"]
+
+[ext_resource type="Script" uid="uid://cbqru3ywjis0" path="res://entities/player/player.gd" id="1_symyc"]
+
+[node name="Player" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_symyc")
+
+[node name="TempSprite" type="ColorRect" parent="."]
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0.268672, 0.332295, 0.787252, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, 8)
+zoom = Vector2(0.75, 0.75)
+position_smoothing_enabled = true
+
+[node name="MoveCooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="BumpCooldown" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="MoveCooldown" to="." method="_on_move_cooldown_timeout"]
+[connection signal="timeout" from="BumpCooldown" to="." method="_on_bump_cooldown_timeout"]

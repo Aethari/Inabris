@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=4 uid="uid://cn265xc0e1nds"]
+
+[ext_resource type="Script" uid="uid://8jqe4pf6ti32" path="res://levels/test_level/test_level.gd" id="1_65yy3"]
+[ext_resource type="TileSet" uid="uid://bysyov4satw3p" path="res://levels/test_level/tileset.tres" id="1_a747b"]
+[ext_resource type="PackedScene" uid="uid://bkfhrouwcs4hg" path="res://entities/player/player.tscn" id="1_isn0r"]
+[ext_resource type="PackedScene" uid="uid://c5nsievgx86hr" path="res://ui/hud/hud.tscn" id="4_8th66"]
+[ext_resource type="Script" uid="uid://b8d16geghkb2s" path="res://items/WorldItem/WorldItem.gd" id="4_qo0ko"]
+
+[sub_resource type="Animation" id="Animation_xctyr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMapLayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TestItem5:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8th66"]
+resource_name = "death"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMapLayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TestItem5:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xctyr"]
+_data = {
+&"RESET": SubResource("Animation_xctyr"),
+&"death": SubResource("Animation_8th66")
+}
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_65yy3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xctyr")
+}
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD1//n/AQABAAEAAAD///n/AQAAAAEAAAALAPn/AQADAAEAAAALAPr/AQADAAEAAAALAPv/AQADAAEAAAALAPz/AQADAAEAAAALAP3/AQADAAEAAAALAP7/AQADAAEAAAALAP//AQADAAEAAAALAAAAAQADAAEAAAALAAEAAQADAAEAAAALAAIAAQADAAEAAAALAAMAAQADAAEAAAALAAQAAQADAAEAAAALAAUAAQADAAIAAAAKAAUAAQACAAIAAAAHAAUAAQACAAIAAAAGAAUAAQACAAIAAAAFAAUAAQACAAIAAAAEAAUAAQACAAIAAAADAAUAAQACAAIAAAACAAUAAQACAAIAAAABAAUAAQACAAIAAAAAAAUAAQACAAIAAAD//wUAAQACAAIAAAD+/wUAAQACAAIAAAD9/wUAAQACAAIAAAD8/wUAAQACAAIAAAD7/wUAAQACAAIAAAD6/wUAAQACAAIAAAD5/wUAAQACAAIAAAD4/wUAAQACAAIAAAD3/wUAAQACAAIAAAD2/wUAAQACAAIAAAD1/wUAAQABAAIAAAD1/wQAAQABAAEAAAD1/wMAAQABAAEAAAD1/wIAAQABAAEAAAD1/wEAAQABAAEAAAD1/wAAAQABAAEAAAD1////AQABAAEAAAD1//7/AQABAAEAAAD1//3/AQABAAEAAAD1//z/AQABAAEAAAD1//v/AQABAAEAAAD1//r/AQABAAEAAAD5//v/AQAAAAAAAAD4/wAAAQAAAAAAAAAHAP3/AQAAAAAAAAAGAAMAAQAAAAAAAAD8/wQAAQAAAAAAAAD+//7/AQAAAAAAAAAIAAUAAQACAAIAAAAJAAUAAQACAAIAAAACAAEAAQAAAAAAAAAEAP7/AQAAAAAAAAD//wMAAQAAAAAAAAD7/wEAAQAAAAAAAAD7//3/AQAAAAAAAAAIAAAAAQAAAAAAAAD3/wMAAQAAAAAAAAAFAPv/AQAAAAAAAAD//wAAAQAAAAAAAAD3//3/AQAAAAAAAAD///r/AQAAAAEAAAD///j/AQAAAAEAAAD///f/AQAAAAEAAAD///b/AQAAAAEAAAD///X/AQAAAAEAAAD+//X/AQAAAAEAAAD+//T/AQAAAAEAAAD9//T/AQAAAAEAAAD9//P/AQAAAAEAAAD8//P/AQAAAAEAAAD8//L/AQAAAAEAAAD///v/AQAAAAEAAAAAAPv/AQAAAAEAAAAAAPz/AQAAAAEAAAAAAP3/AQAAAAEAAAAAAP7/AQAAAAEAAAACAPz/AQAAAAAAAAD9//r/AQAAAAAAAAD1/+z/AQABAAAAAAD1/+3/AQABAAEAAAD1/+7/AQABAAEAAAD1/+//AQABAAEAAAD1//D/AQABAAEAAAD1//H/AQABAAEAAAD1//L/AQABAAEAAAD1//P/AQABAAEAAAD1//T/AQABAAEAAAD1//X/AQABAAEAAAD1//b/AQABAAEAAAD1//f/AQABAAEAAAD1//j/AQABAAEAAAD2/+z/AQACAAAAAAD3/+z/AQACAAAAAAD4/+z/AQACAAAAAAD5/+z/AQACAAAAAAD6/+z/AQACAAAAAAD7/+z/AQACAAAAAAD8/+z/AQACAAAAAAD9/+z/AQACAAAAAAADAOz/AQACAAAAAAACAOz/AQACAAAAAAABAOz/AQACAAAAAAAAAOz/AQACAAAAAAD//+z/AQACAAAAAAD+/+z/AQACAAAAAAALAOz/AQADAAAAAAAEAOz/AQACAAAAAAAFAOz/AQACAAAAAAAGAOz/AQACAAAAAAAHAOz/AQACAAAAAAAIAOz/AQACAAAAAAAJAOz/AQACAAAAAAAKAOz/AQACAAAAAAALAO3/AQADAAEAAAALAO7/AQADAAEAAAALAO//AQADAAEAAAALAPD/AQADAAEAAAALAPH/AQADAAEAAAALAPL/AQADAAEAAAALAPP/AQADAAEAAAALAPT/AQADAAEAAAALAPX/AQADAAEAAAALAPb/AQADAAEAAAALAPf/AQADAAEAAAALAPj/AQADAAEAAAD+/+//AQAAAAAAAAD3/+7/AQAAAAAAAAAJAPD/AQAAAAAAAAAHAPj/AQAAAAAAAAAEAPL/AQAAAAAAAAAGAO7/AQAAAAAAAAADAPX/AQAAAAAAAAABAPj/AQAAAAAAAAD8//b/AQAAAAAAAAD4//f/AQAAAAAAAAD5//T/AQAAAAAAAAD3//L/AQAAAAAAAAD6//D/AQAAAAAAAAAAAPP/AQAAAAAAAAACAO3/AQAAAAAAAAAIAPT/AQAAAAAAAAA=")
+tile_set = ExtResource("1_a747b")
+
+[node name="Player" parent="." instance=ExtResource("1_isn0r")]
+position = Vector2(0, -64)
+hp = 1
+hunger = 0
+thirst = 0
+
+[node name="TestItem5" type="Node2D" parent="."]
+position = Vector2(-64, -256)
+script = ExtResource("4_qo0ko")
+metadata/_custom_type_script = "uid://b8d16geghkb2s"
+
+[node name="ColorRect" type="ColorRect" parent="TestItem5"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(0.117647, 1, 0.0196078, 1)
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="HudLayer" instance=ExtResource("4_8th66")]
+visible = false

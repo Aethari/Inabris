@@ -1,0 +1,11 @@
+Index of the numerical key for each trigger effect
+
++=======+======================+
+| Key   | Trigger effect       |
++=======+======================+
+| -1    | Debug effect (print) |
++-------+----------------------+
+| 0     | No effect            |
++-------+----------------------+
+| 1     | Remove item          |
++-------+----------------------+
